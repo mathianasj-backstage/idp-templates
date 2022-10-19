@@ -89,4 +89,3 @@ spec:
         repoVisibility: public
         sourcePath: ./app-gitops
         deleteBranchOnMerge: true
-        access: mathianasj-backstage/${{ parameters.owner }}
