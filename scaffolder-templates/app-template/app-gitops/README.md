@@ -1,0 +1,1 @@
+GitOps Repository for ${{values.application_id}}
