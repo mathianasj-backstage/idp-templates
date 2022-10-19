@@ -75,7 +75,8 @@ spec:
       input:
         url: ./app-gitops
         copyWithoutRender: []
-        values: {}
+        values:
+          application_id: ${{ parameters.application_id }}
         targetPath: ./app-gitops
 
     - id: publish
