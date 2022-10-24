@@ -11,5 +11,5 @@ metadata:
     size: ${{values.size}}
     environment: ${{environment}}
     goldilocks.fairwinds.com/enabled: "true"
-    argocd.argoproj.io/managed-by: ${{values.application_id}}-build
+    argocd.argoproj.io/managed-by: openshift-gitops
 {% endfor %}
