@@ -1,0 +1,61 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: kafka-template
+  title: Kafka Template
+  description: Provision a Kafka instance for an application
+  tags:
+    - kafka
+spec:
+  owner: service@example.com
+  type: system
+  
+  parameters:
+    - title: Provide information on this kafka instance
+      required:
+        - component_id
+        - owner
+        - application
+      properties:
+        component_id:
+          title: Name
+          type: string
+          description: Unique name of this kafka instance
+        owner:
+          title: Owner
+          type: string
+          description: Owner of this applications
+          ui:field: OwnerPicker
+          ui:options:
+            allowedKinds: 
+              - Group                
+        application:
+          title: Application
+          type: string
+          description: Application which this component belongs to
+          #enum: ["app-1", "app-2", "app-3",app-4]
+          ui:field: OwnedEntityPicker
+          ui:options:
+            allowedKinds:
+            - System       
+
+  steps:
+    - id: template-amqstream
+      name: Fetch Skeleton + Template
+      action: fetch:template
+      input:
+        url: ./app-gitops
+        copyWithoutRender: []
+        values:
+          component_id: ${{ parameters.component_id }}
+          owner: ${{ parameters.owner }}
+          application: ${{ parameters.application }}
+
+    - id: pull-request
+      name: make a pr with the new namespaces
+      action: publish:github:pull-request
+      input:
+        repoUrl: github.com?repo=${{ parameters.application.split(":")[1] }}-gitops&owner=mathianasj-backstage
+        branchName: ${{ parameters.component_id }}
+        title: kafka for ${{ parameters.component_id }}
+        description: kafka for ${{ parameters.component_id }}
