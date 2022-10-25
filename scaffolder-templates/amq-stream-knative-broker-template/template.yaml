@@ -1,11 +1,12 @@
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
-  name: kafka-topic-template
-  title: Kafka Topic Template
-  description: Provision a Kafka topic for an existing instance
+  name: kafka-knative-broker-template
+  title: Kafka Knative Broker Template
+  description: Provision a Kafka backed knative broker
   tags:
     - kafka
+    - knative
 spec:
   owner: service@example.com
   type: component
