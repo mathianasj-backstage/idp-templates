@@ -78,7 +78,7 @@ spec:
         repoUrl: github.com?repo=${{ parameters.component_id }}-quarkus&owner=mathianasj-backstage
         repoVisibility: public
         deleteBranchOnMerge: true
-        access: raf-backstage-demo/${{ parameters.owner }}
+        access: mathianasj-backstage/${{ parameters.owner }}
 
     - id: template-tenant-gitops 
       name: tenant Argcd Fetch Skeleton + Template
