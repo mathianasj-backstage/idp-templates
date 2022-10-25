@@ -1,0 +1,13 @@
+name: push
+on: 
+  push:
+    branches:
+      - master
+    tags:        
+      - v*
+
+jobs:
+  call-workflow:
+    uses: mathianasj-backstage/workflows/.github/workflows/quarkus-ci-cd.yaml@master
+    with:
+      app: myapp
