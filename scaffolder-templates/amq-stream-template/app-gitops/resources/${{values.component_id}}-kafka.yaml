@@ -1,0 +1,9 @@
+apiVersion: backstage.io/v1beta2
+kind: Resource
+metadata:
+  name: ${{values.component_id}}-kafka
+  description: kafka instance
+spec:
+  type: kafka
+  owner: ${{values.owner}}
+  system: ${{values.application.split(":")[1]}}
