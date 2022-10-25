@@ -16,7 +16,7 @@ spec:
         - component_id
         - owner
         - application
-        - kafka-id
+        - kafka
       properties:
         component_id:
           title: Name
