@@ -11,7 +11,7 @@ spec:
   source:
     repoURL: https://github.com/mathianasj-backstage/${{ values.component_id }}-quarkus
     targetRevision: HEAD
-    path: .helm/chart
+    path: .helm/build-chart
     helm:
       valueFiles:
         - ../value-files/values-build.yaml
