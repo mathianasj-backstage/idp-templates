@@ -4,7 +4,7 @@ metadata:
   name: ${{ values.component_id }}
   namespace: ${{values.application.split(":")[1]}}-dev
   labels:
-    strimzi.io/cluster: ${{values.kafka.split(":")[1]}}
+    strimzi.io/cluster: ${{values.kafka.split(":")[1].replace("-kafka", "")}}
 spec:
   partitions: 10
   replicas: 1
