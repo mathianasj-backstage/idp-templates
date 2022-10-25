@@ -1,9 +1,9 @@
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
-  name: kafka-template
-  title: Kafka Template
-  description: Provision a Kafka instance for an application
+  name: kafka-topic-template
+  title: Kafka Topic Template
+  description: Provision a Kafka topic for an existing instance
   tags:
     - kafka
 spec:
