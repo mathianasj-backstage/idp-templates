@@ -1,7 +1,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: ${{values.component_id}}-kafka
+  name: ${{values.component_id}}-kafka-topic
   description: kafka topic
 spec:
   type: kafka-topic
