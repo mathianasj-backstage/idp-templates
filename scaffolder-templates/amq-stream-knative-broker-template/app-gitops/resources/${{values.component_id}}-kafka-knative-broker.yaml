@@ -7,5 +7,5 @@ spec:
   type: kafka-knative-broker
   owner: ${{values.owner}}
   system: ${{values.application.split(":")[1]}}
-  subcomponentOf: ${{values.kafka.split(":")[1]}}
+  subcomponentOf: ${{values.kafka}}
   lifecycle: experimental
