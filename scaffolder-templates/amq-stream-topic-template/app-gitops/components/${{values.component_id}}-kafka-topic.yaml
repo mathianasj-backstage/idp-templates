@@ -1,0 +1,13 @@
+kind: KafkaTopic
+apiVersion: kafka.strimzi.io/v1beta2
+metadata:
+  name: ${{ values.component_id }}
+  namespace: ${{values.application.split(":")[1]}}-dev
+  labels:
+    strimzi.io/cluster: ${{values.kafka.split(":")]1]}}
+spec:
+  partitions: 10
+  replicas: 1
+  config:
+    retention.ms: 604800000
+    segment.bytes: 1073741824

@@ -22,7 +22,7 @@ spec:
               protocol: TCP
           env:
             - name: KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS
-              value: '${{ values.component_id }}-kafka-bootstrap:9092'
+              value: '${{ values.component_id }}-bootstrap:9092'
           resources: {}
           terminationMessagePath: /dev/termination-log
           terminationMessagePolicy: File

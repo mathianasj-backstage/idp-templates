@@ -1,7 +1,7 @@
 kind: Kafka
 apiVersion: kafka.strimzi.io/v1beta2
 metadata:
-  name: ${{ values.component_id }}-kafka
+  name: ${{ values.component_id }}
   namespace: ${{values.application.split(":")[1]}}-dev
 spec:
   kafka:
