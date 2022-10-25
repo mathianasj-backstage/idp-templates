@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: ${{values.component_id}}-kafka-knative-broker
+  description: kafka knative broker
+spec:
+  type: kafka-knative-broker
+  owner: ${{values.owner}}
+  system: ${{values.application.split(":")[1]}}
+  subcomponentOf: ${{values.kafka.split(":")[1]}}

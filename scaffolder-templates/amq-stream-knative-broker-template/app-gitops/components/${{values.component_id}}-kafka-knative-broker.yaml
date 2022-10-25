@@ -1,0 +1,13 @@
+kind: Broker
+apiVersion: eventing.kative.dev/v1
+metadata:
+  annotations:
+    eventing.knative.dev/broker.class: Kafka
+  name: ${{ values.component_id }}
+  namespace: ${{values.application.split(":")[1]}}-dev
+spec:
+  config:
+    apiVersion: v1
+    kind: ConfigMap
+    name: ${{values.kafka.split(":")[1]}}-broker-config
+    namespace: ${{values.application.split(":")[1]}}-dev
