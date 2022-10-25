@@ -10,4 +10,4 @@ jobs:
   call-workflow:
     uses: mathianasj-backstage/workflows/.github/workflows/quarkus-ci-cd.yaml@master
     with:
-      app: myapp
+      app: ${{values.application.split(":")[1]}}
