@@ -11,3 +11,4 @@ jobs:
     uses: mathianasj-backstage/workflows/.github/workflows/quarkus-ci-cd.yaml@master
     with:
       app: ${{values.application.split(":")[1]}}
+      component: ${{values.component_id}}
