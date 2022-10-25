@@ -39,3 +39,29 @@ spec:
       maxSurge: 25%
   revisionHistoryLimit: 10
   progressDeadlineSeconds: 600
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: ${{ values.component_id }}-kafka-ui
+  namespace: ${{values.application.split(":")[1]}}-dev
+spec:
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+  selector:
+    app: ${{ values.component_id }}-kafka-ui
+---
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: ${{ values.component_id }}-kafka-ui
+  namespace: ${{values.application.split(":")[1]}}-dev
+spec:
+  to:
+    kind: Service
+    name: ${{ values.component_id }}-kafka-ui
+    weight: 100
+  port:
+    targetPort: 8080
