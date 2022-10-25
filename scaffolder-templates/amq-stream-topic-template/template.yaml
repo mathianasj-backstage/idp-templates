@@ -8,7 +8,7 @@ metadata:
     - kafka
 spec:
   owner: service@example.com
-  type: system
+  type: component
   
   parameters:
     - title: Provide information on this kafka instance
