@@ -19,6 +19,8 @@ spec:
         quarkus-run: 
           image:
             tag: dummy
+          appName: ${{values.application.split(":")[1]}}
+          name: ${{ values.component_id }}
   destination:
     server: https://kubernetes.default.svc
     namespace: ${{values.application.split(":")[1]}}-dev

@@ -1,0 +1,2 @@
+quarkus-run:
+  replicaCount: 1
