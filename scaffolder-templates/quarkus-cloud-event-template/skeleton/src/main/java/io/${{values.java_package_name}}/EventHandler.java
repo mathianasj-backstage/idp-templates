@@ -6,7 +6,7 @@ import io.quarkus.funqy.Funq;
 import io.smallrye.mutiny.Uni;
 
 public class EventHandler {
-    private static final Logger = Logger.getLogger(EventHandler.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(EventHandler.class.getName());
 
     @Funq
     public Uni<Void> incoming() {
