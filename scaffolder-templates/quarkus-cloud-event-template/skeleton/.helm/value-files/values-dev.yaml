@@ -2,5 +2,5 @@ quarkus-run:
   replicaCount: 1
   eventing: true
   knative:
-    broker: ${{values.broker.split(":")[1].replace("-kafka-knative-broker")}}
+    broker: ${{values.broker.split(":")[1].replace("-kafka-knative-broker", "")}}
   env: dev
