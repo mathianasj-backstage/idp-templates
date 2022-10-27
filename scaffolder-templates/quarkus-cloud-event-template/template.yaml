@@ -86,7 +86,7 @@ spec:
         allowedHosts: ['github.com']
         description: This is ${{ parameters.component_id }}
         repoUrl: github.com?repo=${{ parameters.component_id }}-quarkus&owner=mathianasj-backstage
-        repoVisibility: public
+        repoVisibility: private
         deleteBranchOnMerge: true
         access: mathianasj-backstage/${{ parameters.owner }}
 
