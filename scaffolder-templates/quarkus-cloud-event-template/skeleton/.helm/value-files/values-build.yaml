@@ -1,0 +1,3 @@
+quarkus-build:
+  appName: ${{values.application.split(":")[1]}}
+  name: ${{ values.component_id }}

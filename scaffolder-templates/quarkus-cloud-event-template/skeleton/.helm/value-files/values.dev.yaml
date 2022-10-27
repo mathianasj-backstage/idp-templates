@@ -1,0 +1,5 @@
+quarkus-run:
+  replicaCount: 1
+  eventing: true
+  knative:
+    broker: ${{values.broker.split(":")[1]}}
