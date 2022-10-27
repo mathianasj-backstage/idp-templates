@@ -3,3 +3,4 @@ quarkus-run:
   eventing: true
   knative:
     broker: ${{values.broker.split(":")[1]}}
+  env: dev
